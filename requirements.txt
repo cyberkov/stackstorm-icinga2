@@ -1,3 +1,4 @@
 # Place any required python libraries here. Will be installed into a pack specific virtualenv
 
 git+https://github.com/fmnisme/python-icinga2api.git
+pycurl==7.19.0
