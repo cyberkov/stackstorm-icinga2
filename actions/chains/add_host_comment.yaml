@@ -1,0 +1,9 @@
+---
+chain:
+  - name: "add comment to Host"
+    ref: "icinga2.add_comment"
+    parameters:
+      object_type: "Host"
+      filter_string: "host.name==\"{{host}}\""
+      author: "{{author}}"
+      comment: "{{comment}}"

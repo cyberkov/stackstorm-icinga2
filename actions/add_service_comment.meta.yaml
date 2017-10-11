@@ -1,0 +1,24 @@
+---
+description: Add comment to an Icinga2 Service
+enabled: true
+runner_type: "action-chain"
+entry_point: chains/add_service_comment.yaml
+name: add_service_comment
+parameters:
+  host:
+    type: "string"
+    required: true
+    description: "Host to comment on"
+  service:
+    type: "string"
+    required: true
+    description: "Service to comment on"
+  author:
+    type: "string"
+    required: true
+    description: "Name of the author"
+    default: "StackStorm"
+  comment:
+    type: "string"
+    required: true
+    description: "Comment Text"

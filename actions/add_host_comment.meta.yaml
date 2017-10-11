@@ -1,0 +1,20 @@
+---
+description: Add comment to an Icinga2 host
+enabled: true
+runner_type: "action-chain"
+entry_point: chains/add_host_comment.yaml
+name: add_host_comment
+parameters:
+  host:
+    type: "string"
+    required: true
+    description: "Hosts to comment on"
+  author:
+    type: "string"
+    required: true
+    description: "Name of the author"
+    default: "StackStorm"
+  comment:
+    type: "string"
+    required: true
+    description: "Comment Text"
