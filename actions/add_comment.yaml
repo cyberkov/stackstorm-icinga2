@@ -1,0 +1,30 @@
+---
+description: Add comment to an Icinga2 object
+enabled: true
+entry_point: add_comment.py
+name: add_comment
+parameters:
+  object_type:
+    type: "string"
+    required: true
+    description: "The object type to add a comment, Host or Service."
+    default: "Service"
+  filter_string:
+    type: "string"
+    required: true
+    description: "Filter expression to match the objects."
+    default: "service.name==\"ping4\""
+  filter_vars:
+    type: "object"
+    required: false
+    description: "Variables which are available to your filter expression."
+  author:
+    type: "string"
+    required: true
+    description: "Name of the author"
+    default: "StackStorm"
+  comment:
+    type: "string"
+    required: true
+    description: "Comment Text"
+runner_type: "python-script"
