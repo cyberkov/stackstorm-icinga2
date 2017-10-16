@@ -1,0 +1,44 @@
+---
+description: Acknowledge an Icinga2 alert
+enabled: true
+entry_point: acknowledge_problem.py
+name: acknowledge_problem
+parameters:
+  object_type:
+    type: "string"
+    required: true
+    description: "The object type to add a comment, Host or Service."
+    default: "Service"
+  filter_string:
+    type: "string"
+    required: true
+    description: "Filter expression to match the objects."
+    default: "host.name==\"localhost\" && service.name==\"ping4\""
+  filter_vars:
+    type: "object"
+    required: false
+    description: "Variables which are available to your filter expression."
+  author:
+    type: "string"
+    required: true
+    description: "Name of the author"
+    default: "StackStorm"
+  comment:
+    type: "string"
+    required: true
+    description: "Comment Text"
+  expiry:
+    type: "number"
+    required: false
+    description: "If set the acknowledgement will vanish after this timestamp."
+  sticky:
+    type: "boolean"
+    required: false
+    description: "If true, the default, the acknowledgement will remain until the service or host fully recovers."
+    default: false
+  notify:
+    type: "boolean"
+    required: false
+    description: "If true a notification will be sent out to contacts to indicate this problem has been acknowledged."
+    default: false
+runner_type: "python-script"
