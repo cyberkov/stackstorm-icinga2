@@ -9,4 +9,4 @@ class Icinga2GetStatus(Icinga2Action):
 
     def run(self):
         client = self.get_client()
-        return json.dumps(client.status.list())
+        return client.status.list()
