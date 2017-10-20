@@ -1,0 +1,24 @@
+---
+description: Reschedule the check on a Icinga2 object
+enabled: true
+entry_point: reschedule_check.py
+name: reschedule_host_check
+parameters:
+  object_type:
+    type: "string"
+    default: "Host"
+    immutable: true
+  services:
+    type: "array"
+    required: true
+    description: "Name of the hosts to be rescheduled."
+  force_check:
+    type: "boolean"
+    required: true
+    description: "Force execution"
+    default: true
+  next_check:
+    type: "string"
+    required: false
+    description: "Timestamp to run the check"
+runner_type: "python-script"
